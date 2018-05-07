@@ -1,0 +1,15 @@
+---
+- name: Creates directory
+  file: path=~/qpid_vm state=directory
+- name: downloading vagrant
+  yum: name=https://releases.hashicorp.com/vagrant/2.1.0/vagrant_2.1.0_x86_64.rpm state=present
+
+- name: install libvirt dependency
+  yum: name={{ item }} state=present
+  with_items:
+   - libvirt-devel
+   - libxslt-devel
+   - libxml2-devel
+   - qemu-img
+   - gcc
+   - rsync
