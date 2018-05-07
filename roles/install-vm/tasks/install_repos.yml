@@ -8,6 +8,8 @@
   yum: name={{ item }} state=present
   with_items:
    - libvirt-devel
+   - libvirt
+   - libvirt-daemon-kvm
    - libxslt-devel
    - libxml2-devel
    - qemu-img
